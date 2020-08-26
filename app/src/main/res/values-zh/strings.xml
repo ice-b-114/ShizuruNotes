@@ -15,6 +15,11 @@
     <string name="setting_kill_expression_summary">在技能动作详情中显示计算公式</string>
     <string name="setting_appearance">显示</string>
     <string name="setting_system">系统</string>
+    <string name="setting_server">服务器选择</string>
+    <string-array name="setting_server_options">
+        <item>日服</item>
+        <item>国服</item>
+    </string-array>
     <string name="setting_db_version">数据库版本</string>
     <string name="setting_app_version">应用版本</string>
     <string name="setting_re_download_db">强制重新下载数据库</string>

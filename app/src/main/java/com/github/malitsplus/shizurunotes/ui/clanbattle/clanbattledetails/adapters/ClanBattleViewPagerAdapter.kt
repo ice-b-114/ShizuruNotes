@@ -13,19 +13,21 @@ class ClanBattleViewPagerAdapter(
     private val tabFragmentCreator = mutableMapOf<Int, () -> ClanBattleDetailsFragment>()
 
     init {
+        var count = 0
         phaseList.forEach {
-            tabFragmentCreator[it.phase - 1] = {
+            tabFragmentCreator[count] = {
                 ClanBattleDetailsFragment(
                     it
                 )
             }
+            count += 1
         }
     }
 
     override fun getItemCount() = tabFragmentCreator.size
 
     override fun createFragment(position: Int): Fragment {
-        val index = tabFragmentCreator.size - position - 1
-        return tabFragmentCreator[index]?.invoke() ?: throw IndexOutOfBoundsException()
+        //val index = tabFragmentCreator.size - position - 1
+        return tabFragmentCreator[position]?.invoke() ?: throw IndexOutOfBoundsException()
     }
 }
