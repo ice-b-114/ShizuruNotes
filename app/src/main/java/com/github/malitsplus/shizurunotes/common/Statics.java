@@ -34,6 +34,6 @@ public class Statics {
     //  App URL
     public static final String APP_RAW = "https://raw.githubusercontent.com/ice-b-114/ShizuruNotes/master";
     public static final String APP_UPDATE_LOG = APP_RAW + "/update_log.json";
-    public static final String APP_PACKAGE = "https://github.com/ice-b-114/ShizuruNotes/releases/latest/download/shizurunotes-release.apk";
-    public static final String APK_NAME = "shizurunotes-release.apk";
+    public static final String APP_PACKAGE = "https://github.com/ice-b-114/ShizuruNotes/releases/latest/download/ShizuruNotes-custom-release.apk";
+    public static final String APK_NAME = "ShizuruNotes-custom-release.apk";
 }
