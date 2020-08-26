@@ -62,6 +62,7 @@ class MainActivity : AppCompatActivity(),
 
     private fun checkUpdate() {
         UpdateManager.get().checkAppVersion(true)
+        UpdateManager.get().checkOriginAppVersion()
     }
 
     private fun initSharedViewModels() {

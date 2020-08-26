@@ -53,6 +53,7 @@ class UpdateManager private constructor(
     }
 
     private var appHasNewVersion = false
+    private var originappHasNewVersion = false
     private var appVersionJsonInstance: AppVersionJson? = null
     private var serverVersion: Long = 0
     private var progress = 0
@@ -98,6 +99,14 @@ class UpdateManager private constructor(
                     MaterialDialog(mContext, MaterialDialog.DEFAULT_BEHAVIOR)
                         .title(text = I18N.getString(R.string.message))
                         .message(text = info)
+                        .show {
+                            positiveButton(res = R.string.text_ok)
+                        }
+                }
+                if (originappHasNewVersion) {
+                    MaterialDialog(mContext, MaterialDialog.DEFAULT_BEHAVIOR)
+                        .title(text = "原app有更新")
+                        .message(text = "请等待分支合并后，将会有更新推送")
                         .show {
                             positiveButton(res = R.string.text_ok)
                         }
@@ -180,6 +189,39 @@ class UpdateManager private constructor(
         var messageZh: String? = null
         var infoJa: String? = null
         var infoZh: String? = null
+    }
+
+    fun checkOriginAppVersion() {
+        val client = OkHttpClient()
+        val request = Request.Builder()
+            .url(Statics.ORIGIN_APP_UPDATE_LOG)
+            .build()
+        val call = client.newCall(request)
+        call.enqueue(object : Callback {
+            override fun onFailure(call: Call, e: IOException) {
+                LogUtils.file(LogUtils.E, "checkOriginAppVersion", e.message)
+            }
+
+            override fun onResponse(call: Call, response: Response) {
+                val lastVersionJson = response.body?.string()
+                try {
+                    if (lastVersionJson.isNullOrEmpty())
+                        throw Exception("No response from server.")
+                    if (response.code != 200)
+                        throw Exception("Abnormal connection state code: ${response.code}")
+
+                    appVersionJsonInstance = JsonUtils.getBeanFromJson<AppVersionJson>(lastVersionJson, AppVersionJson::class.java)
+                    appVersionJsonInstance?.versionCode?.let {
+                        if (it > getAppVersionCode()){
+                            originappHasNewVersion = true
+                        }
+                    }
+                } catch (e: Exception) {
+                    LogUtils.file(LogUtils.E, "checkOriginAppVersion", e.message)
+                    iActivityCallBack?.showSnackBar(R.string.app_update_check_failed)
+                }
+            }
+        })
     }
 
     fun checkAppVersion(checkDb: Boolean) {
