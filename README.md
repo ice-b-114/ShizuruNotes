@@ -1,6 +1,11 @@
 # ShizuruNotes
 An unofficial Android tool application of the game "Princess Connect Re:Dive".  
 
+##个人改动部分
+* **取消了切换服务器按钮的注释，可切换为国服**
+* 适配国服数据库的boss字段
+* 将版本更新地址切换到本仓库。通过github的合并功能，来在保留切换功能的同时跟随原app更新
+
 ## Requirement
 * Android 8+  
 
