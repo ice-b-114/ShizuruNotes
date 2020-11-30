@@ -35,12 +35,7 @@ public class TargetParameter {
     private boolean hasDirectionPhrase;
     private boolean hasTargetType;
     private boolean hasDependAction(){
-        return dependAction != null && (dependAction.getActionId() != 0
-                && targetType != TargetType.absolute
-                && (ActionType.ifForChildren == dependAction.parameter.actionType
-                || ActionType.ifForAll == dependAction.parameter.actionType
-                || ActionType.damage == dependAction.parameter.actionType
-                || ActionType.knock == dependAction.parameter.actionType));
+        return dependAction != null && (dependAction.getActionId() != 0 && targetType != TargetType.absolute);
     }
 
     private void setBooleans(){
