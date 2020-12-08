@@ -1,9 +1,9 @@
 {
-	"versionCode": "18",
-	"versionName": "1.0.2",
+	"versionCode": "25",
+	"versionName": "1.0.9",
 	"recommend": "false",
-	"messageJa": "・ティタノタートルのスキルを修正。",
-	"messageZh": "・修正会战Bossティタノタートル的技能说明。",
+	"messageJa": "・カレンダーにて一部のキャンペーンを追加\n・ターゲットに関する一部説明文の誤りを訂正\n・新しいスキルに対応",
+	"messageZh": "・日历中新增部分活动说明\n・订正与目标相关的部分说明文\n・适配新技能",
 	"infoJa": "",
 	"infoZh": ""
 }

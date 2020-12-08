@@ -35,12 +35,11 @@ public class TargetParameter {
     private boolean hasDirectionPhrase;
     private boolean hasTargetType;
     private boolean hasDependAction(){
-        return dependAction != null && (dependAction.getActionId() != 0
+        return dependAction != null && (
+                dependAction.getActionId() != 0
                 && targetType != TargetType.absolute
-                && (ActionType.ifForChildren == dependAction.parameter.actionType
-                || ActionType.ifForAll == dependAction.parameter.actionType
-                || ActionType.damage == dependAction.parameter.actionType
-                || ActionType.knock == dependAction.parameter.actionType));
+                && dependAction.parameter.actionType != ActionType.chooseArea
+        );
     }
 
     private void setBooleans(){
@@ -304,7 +303,10 @@ enum TargetType{
     magicSTRDescendingOrNear(31),
     magicSTRAscendingOrNear(32),
     shadow(33),
-    nearWithoutSelf(34);
+    nearWithoutSelf(34),
+    hpDescendingOrNearForward(35),
+    hpAscendingOrNearForward(36),
+    tpDescendingOrMaxForward(37);
 
     private int value;
     TargetType(int value){
@@ -373,6 +375,10 @@ enum TargetType{
             case hpAscending:
             case hpAscendingOrNear:
                 return I18N.getString(R.string.the_lowest_HP_ratio);
+            case hpAscendingOrNearForward:
+                return I18N.getString(R.string.the_lowest_HP);
+            case hpDescendingOrNearForward:
+                return I18N.getString(R.string.the_highest_HP);
             case hpDescending:
             case hpDescendingOrNear:
                 return I18N.getString(R.string.the_highest_HP_ratio);
@@ -386,6 +392,7 @@ enum TargetType{
                 return I18N.getString(R.string.targets_within_the_scope);
             case tpDescending:
             case tpDescendingOrNear:
+            case tpDescendingOrMaxForward:
                 return I18N.getString(R.string.the_highest_TP);
             case tpAscending:
             case tpReducing:
@@ -439,12 +446,17 @@ enum TargetType{
                 return I18N.getString(R.string.s_lowest_HP_ratio, localizedModifier);
             case hpDescending:
                 return I18N.getString(R.string.s_highest_HP_ratio, localizedModifier);
+            case hpAscendingOrNearForward:
+                return I18N.getString(R.string.s_lowest_HP, localizedModifier);
+            case hpDescendingOrNearForward:
+                return I18N.getString(R.string.s_highest_HP, localizedModifier);
             case forward:
                 return I18N.getString(R.string.s_most_backward, localizedModifier);
             case backward:
                 return I18N.getString(R.string.s_most_forward, localizedModifier);
             case tpDescending:
             case tpDescendingOrNear:
+            case tpDescendingOrMaxForward:
                 return I18N.getString(R.string.s_highest_TP, localizedModifier);
             case tpAscending:
             case tpReducing:
@@ -505,6 +517,10 @@ enum TargetType{
                 case hpDescending:
                 case hpDescendingOrNear:
                     return I18N.getString(R.string.the_s_highest_HP_ratio, localizedModifier);
+                case hpAscendingOrNearForward:
+                    return I18N.getString(R.string.the_s_lowest_HP, localizedModifier);
+                case hpDescendingOrNearForward:
+                    return I18N.getString(R.string.the_s_highest_HP, localizedModifier);
                 case forward:
                     return I18N.getString(R.string.the_s_most_backward, localizedModifier);
                 case backward:

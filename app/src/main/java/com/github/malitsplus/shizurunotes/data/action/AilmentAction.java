@@ -4,6 +4,7 @@ import com.github.malitsplus.shizurunotes.R;
 import com.github.malitsplus.shizurunotes.common.I18N;
 import com.github.malitsplus.shizurunotes.data.Ailment;
 import com.github.malitsplus.shizurunotes.data.Property;
+import com.github.malitsplus.shizurunotes.utils.Utils;
 
 import java.math.RoundingMode;
 import java.util.ArrayList;
@@ -29,13 +30,21 @@ public class AilmentAction extends ActionParameter {
             case action:
                 String str;
                 switch ((Ailment.ActionDetail)ailment.ailmentDetail.detail){
+//                    case haste:
+//                        str = I18N.getString(R.string.Raise_s1_d2_attack_speed_for_s3_sec,
+//                                targetParameter.buildTargetClause(), Math.round((actionValue1 - 1) * 100), buildExpression(level, durationValues, RoundingMode.UNNECESSARY, property));
+//                        break;
+//                    case slow:
+//                        str = I18N.getString(R.string.Reduce_s1_d2_attack_speed_for_s3_sec,
+//                                targetParameter.buildTargetClause(), Math.round((1 - actionValue1) * 100), buildExpression(level, durationValues, RoundingMode.UNNECESSARY, property));
+//                        break;
                     case haste:
-                        str = I18N.getString(R.string.Raise_s1_d2_attack_speed_for_s3_sec,
-                                targetParameter.buildTargetClause(), Math.round((actionValue1 - 1) * 100), buildExpression(level, durationValues, RoundingMode.UNNECESSARY, property));
-                        break;
                     case slow:
-                        str = I18N.getString(R.string.Reduce_s1_d2_attack_speed_for_s3_sec,
-                                targetParameter.buildTargetClause(), Math.round((1 - actionValue1) * 100), buildExpression(level, durationValues, RoundingMode.UNNECESSARY, property));
+                        str = I18N.getString(R.string.Multiple_attack_speed_of_s1_with_s2_for_s3_sec,
+                                targetParameter.buildTargetClause(),
+                                Utils.roundIfNeed(Double.parseDouble(buildExpression(level, actionValues, RoundingMode.UNNECESSARY, property)) * 100),
+                                buildExpression(level, durationValues, RoundingMode.UNNECESSARY, property)
+                        );
                         break;
                     case sleep:
                         str = I18N.getString(R.string.Make_s1_fall_asleep_for_s2_sec,
@@ -62,13 +71,13 @@ public class AilmentAction extends ActionParameter {
                 switch ((Ailment.DotDetail)ailment.ailmentDetail.detail){
                     case poison:
                         return I18N.getString(R.string.Poison_s1_and_deal_s2_damage_per_second_for_s3_sec,
-                                targetParameter.buildTargetClause(), buildExpression(level, RoundingMode.UP, property), buildExpression(level, durationValues, RoundingMode.HALF_UP, property));
+                                targetParameter.buildTargetClause(), buildExpression(level, property), buildExpression(level, durationValues, RoundingMode.HALF_UP, property));
                     case violentPoison:
                         return I18N.getString(R.string.Poison_s1_violently_and_deal_s2_damage_per_second_for_s3_sec,
-                                targetParameter.buildTargetClause(), buildExpression(level, RoundingMode.UP, property), buildExpression(level, durationValues, RoundingMode.HALF_UP, property));
+                                targetParameter.buildTargetClause(), buildExpression(level, property), buildExpression(level, durationValues, RoundingMode.HALF_UP, property));
                     default:
                         return I18N.getString(R.string.s1_s2_and_deal_s3_damage_per_second_for_s4_sec,
-                                ailment.description(), targetParameter.buildTargetClause(), buildExpression(level, RoundingMode.UP, property), buildExpression(level, durationValues, RoundingMode.HALF_UP, property));
+                                ailment.description(), targetParameter.buildTargetClause(), buildExpression(level, property), buildExpression(level, durationValues, RoundingMode.HALF_UP, property));
                 }
             case silence:
                 return I18N.getString(R.string.Silence_s1_with_s2_chance_for_s3_sec,

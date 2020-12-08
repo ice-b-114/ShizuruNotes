@@ -230,7 +230,6 @@
     <string name="icon_previous">前回の選択</string>
     <string name="icon_cancel_all">クリア</string>
     <string name="space_modifier" translatable="false">&#160;%s&#160;</string>
-    <string name="space_modifier_2" translatable="false">&#160;&#160;%s&#160;&#160;</string>
     <string name="text_log_clean">ログファイルをすべて削除します、よろしいですか？</string>
     <string name="text_delete">削除</string>
     <string name="text_deney">いいえ</string>
@@ -442,8 +441,8 @@
     <string name="physical">物理</string>
     <string name="inevitable_physical">必中の物理</string>
     <string name="Deal_s1_s2_damage_to_s3">%3$sに [%1$s] の%2$sダメージを与える。</string>
-    <string name="Deal_s1_s2_damage_to_s3_and_this_attack_is_ensured_critical">%3$sに [%1$s] の%2$sダメージを与える。このアクションは必ずクリティカルする。</string>
-    <string name="Critical_damage_is_s_times_as_normal_damage">クリティカルした場合、ダメージが [%s] 倍になる。</string>
+    <string name="Deal_s1_s2_damage_to_s3_and_this_attack_is_ensured_critical">%3$sに [%1$s] の%2$sダメージを与える。このアクションの %4$shitは必ずクリティカルする。</string>
+    <string name="Critical_damage_is_s_times_as_normal_damage">クリティカルした場合、ダメージ倍率が [%s] 倍になる。</string>
     <string name="Change_self_position_to_s_then_return">%sの位置まで移動し、スキル終了後元の位置に戻る。</string>
     <string name="Change_self_position_s_forward_then_return">前へ [%s] 移動し、スキル終了後元の位置に戻る。</string>
     <string name="Change_self_position_s_backward_then_return">後ろへ [%s] 移動し、スキル終了後元の位置に戻る。</string>
@@ -489,7 +488,7 @@
     <string name="Knock_Back">ノックバック</string>
     <string name="Action">アクション</string>
     <string name="Dot">継続ダメージ</string>
-    <string name="Blind">暗闇</string>
+    <string name="Blind">物理暗闇</string>
     <string name="Silence">沈黙</string>
     <string name="Instant_Death">即死</string>
     <string name="Unknown_Effect">不明な効果</string>
@@ -498,7 +497,7 @@
     <string name="Fear">恐慌</string>
     <string name="Seal">刻印付与</string>
     <string name="Awe">畏怖</string>
-    <string name="Polymorph">トナカイ化</string>
+    <string name="Polymorph">変身</string>
     <string name="Changing_Max_HP">HP変化</string>
     <string name="Raise_s1_d2_attack_speed_for_s3_sec">%1$sの行動速度を [%2$d%%] アップ、効果時間 [%3$s] 秒。</string>
     <string name="Reduce_s1_d2_attack_speed_for_s3_sec">%1$sの行動速度を [%2$d%%] ダウン、効果時間 [%3$s] 秒。</string>
@@ -509,7 +508,7 @@
     <string name="Poison_s1_violently_and_deal_s2_damage_per_second_for_s3_sec">%1$sを猛毒状態にし、毎秒 [%2$s] のダメージを与える、効果時間 [%3$s] 秒。</string>
     <string name="s1_s2_and_deal_s3_damage_per_second_for_s4_sec">%2$sに%1$s、毎秒 [%3$s] のダメージを与える、効果時間 [%4$s] 秒。</string>
     <string name="Silence_s1_with_s2_chance_for_s3_sec">[%2$s%%] の確率で%1$sを沈黙状態にする、効果時間 [%3$s] 秒。</string>
-    <string name="Blind_s1_with_s2_chance_for_s3_sec_physical_attack_has_d4_chance_to_miss">[%2$s%%] の確率で%1$sを暗闇状態にする、効果時間 [%3$s] 秒。物理攻撃は [%4$s%%] の確率でミスする。</string>
+    <string name="Blind_s1_with_s2_chance_for_s3_sec_physical_attack_has_d4_chance_to_miss">[%2$s%%] の確率で%1$sを物理暗闇状態にする、効果時間 [%3$s] 秒。物理攻撃は [%4$s%%] の確率でミスする。</string>
     <string name="Move_Speed">移動速度</string>
     <string name="Physical_Critical_Damage">物理クリティカルダメージ</string>
     <string name="Magical_Critical_Damage">魔法クリティカルダメージ</string>
@@ -555,7 +554,7 @@
     <string name="Random_event_d1_chance_use_d2_otherwise_d3">ランダム事件：[%1$d%%] の確率で[アクション%2$d]を使う、それ以外の場合は[アクション%3$d]を使う。</string>
     <string name="Random_event_d1_chance_use_d2">ランダム事件：[%1$d%%] の確率で[アクション%2$d]を使う。</string>
     <string name="controlled">行動不能状態中</string>
-    <string name="blinded">暗闇状態中</string>
+    <string name="blinded">物理暗闇状態中</string>
     <string name="charmed_or_confused">魅了か混乱状態中</string>
     <string name="decoying">挑発状態中</string>
     <string name="burned">火傷状態中</string>
@@ -564,6 +563,7 @@
     <string name="venomed">猛毒状態中</string>
     <string name="poisoned_or_venomed">毒か猛毒状態中</string>
     <string name="breaking">Break状態中</string>
+    <string name="polymorphed">変身状態中</string>
     <string name="Condition_s">条件分岐：%s</string>
     <string name="separator">、</string>
     <string name="Revive_s1_with_d2_HP">%1$sを復活させ、HPを [%2$d%%] 回復させる。（この値はキャラの回復量上昇値に影響される）</string>
@@ -611,8 +611,8 @@
     <string name="Summon_a_field_of_radius_d1_at_position_of_s2_to_deal_s3_s4_damage_per_second_for_s5_sec">%2$sの位置で半径 [%1$d] のフィールドを展開し、毎秒 [%3$s] の%4$sダメージを与える、効果時間 [%5$s] 秒。</string>
     <string name="Summon_a_healing_field_of_radius_d1_to_heal_s2_s3_s4_HP_per_second_for_5s_sec">半径 [%1$d] のフィールドを展開し、%2$sに毎秒 [%3$s%4$s] のHPを回復させる、効果時間 [%5$s] 秒。</string>
     <string name="Summon_a_healing_field_of_radius_d1_at_position_of_s2_to_heal_s3_s4_HP_per_second_for_s5_sec">%2$sの位置で半径 [%1$d] のフィールドを展開し、毎秒 [%3$s%4$s] のHPを回復させる、効果時間 [%5$s] 秒。</string>
-    <string name="Summon_a_field_of_radius_d1_to_s2_s3_s4_s5_for_s6_sec">半径 [%1$d] のフィールドを展開し、%3$sの%5$sを [%4$s] %2$sさせる、効果時間 [%6$s] 秒。</string>
-    <string name="Summon_a_field_of_radius_d1_at_position_of_s2_to_s3_s4_s5_for_s6_sec">%2$sの位置で半径 [%1$d] のフィールドを展開し、%5$sを [%4$s] %3$sさせる、効果時間 [%6$s] 秒。</string>
+    <string name="Summon_a_field_of_radius_d1_to_s2_s3_s4_s5_for_s6_sec">半径 [%1$d] のフィールドを展開し、%3$sの%5$sを [%4$s%7$s] %2$sさせる、効果時間 [%6$s] 秒。</string>
+    <string name="Summon_a_field_of_radius_d1_at_position_of_s2_to_s3_s4_s5_for_s6_sec">%2$sの位置で半径 [%1$d] のフィールドを展開し、%5$sを [%4$s%7$s] %3$sさせる、効果時間 [%6$s] 秒。</string>
     <string name="Summon_a_field_of_radius_d1_on_s2_to_cast_effect_d3_for_s4_sec">%2$sの位置で半径 [%1$d] のフィールドを展開し、[アクション%3$d]を継続的に放る、効果時間 [%4$s] 秒。</string>
     <string name="Condition_s1_chance_use_d2_when_takes_damage_within_s3_sec">条件分岐：[%3$s] 秒内ダメージを受けた場合、[%1$s%%] の確率で[アクション%2$d]を使う。</string>
     <string name="Appear_after_s_sec_since_wave_start">ウェーブ開始 [%s] 秒後入場する。</string>
@@ -630,7 +630,7 @@
     <string name="In_nex_s1_sec_s2_physical_attacks_will_miss">%2$sの物理攻撃を必ずミスさせる、効果時間 [%1$s] 秒。</string>
     <string name="In_next_s1_attacks_s2_physical_attacks_will_miss">%2$sの次の [%1$s] 回物理攻撃を必ずミスさせる。</string>
     <string name="Set_a_countdown_timer_on_s1_trigger_effect_d2_after_s3_sec">%1$sにカウントダウンを設置する、[%3$s] 秒後[アクション%2$d]を発動させる。</string>
-    <string name="Remove_field_of_skill_d1_1_represents_the_first_skill_in_this_list_effect_d2">[スキル%1$d] の [アクション%2$d] が展開したフィールドを解除する。</string>
+    <string name="Remove_field_of_skill_d1_1_represents_the_first_skill_in_this_list_effect_d2">このページの%1$d番目のスキルの [アクション%2$d] が展開したフィールドを解除する。</string>
     <string name="When_s1_receive_healing_deal_s2_healing_amount_damage_instead_last_for_s3_sec_or_unlimited_time_if_triggered_by_field">%1$sが回復を受けた時、それを無効にし、[%2$s * 回復量] 分のダメージを与える、効果時間 [%3$s] 秒。この効果はフィールド効果の場合、効果時間は無限大。</string>
     <string name="Make_s1_when_get_one_hit_by_the_caster_gain_one_mark_stack_max_s2_ID_s3_for_s4_sec">自分が%1$sをHitするたび、それにマーク[ID：%3$s]を1スタック増やせる、効果時間 [%4$s] 秒。この効果は最大 [%2$s] までスタックする。</string>
     <string name="Make_s1_when_deal_damage_gain_one_mark_stack_max_s2_ID_s3_for_s4_sec">%1$sがダメージを与えるたび、マーク[ID：%3$s]を1スタック増やせる、効果時間 [%4$s] 秒、この効果は最大 [%2$s] までスタックする。</string>
@@ -640,7 +640,7 @@
     <string name="Repeat_effect_d1_every_s2_sec_up_to_s3_sec_break_if_taken_more_than_s4_damage">[%2$s] 秒ごとに [アクション%1$d] を使い、最大 [%3$s] 秒まで続く。受けたダメージ量が [%4$s] を超えた時この効果を中断する。</string>
     <string name="use_d_after_time_up">効果時間終了後、[アクション%d] を使う。</string>
     <string name="use_d_after_break">効果が中断されたあと、[アクション%d] を使う。</string>
-    <string name="Polymorph_s1_for_s2_sec">%1$sを%2$s秒変貌させる。</string>
+    <string name="Polymorph_s1_for_s2_sec">%1$sを [%2$s] 秒変身させる。</string>
     <string name="Clear_all_s1_on_s2_with_chance_s3">[%3$s%%] の確率で%2$sの%1$sをすべて解除する。</string>
     <string name="buffs">バフ</string>
     <string name="debuffs">デバフ</string>
@@ -660,7 +660,7 @@
     <string name="nearest_without_self">自分以外最も近い</string>
     <string name="s_nearest_without_self">%s自分以外最も近い</string>
     <string name="the_s_nearest_without_self">自分以外%s近い</string>
-    <string name="shadow">シャドー</string>
+    <string name="shadow">シャドウ</string>
     <string name="s_shadow">%sシャドー</string>
     <string name="except_self">（自分以外）</string>
     <string name="use_d1_if_s2_HP_is_below_d3">%2$sのHPが [%3$d%%] 以下の場合、[アクション%1$d]を使う。</string>
@@ -671,4 +671,21 @@
     <string name="Use_s_if_this_skill_not_get_critical">このスキルがクリティカルしなかった場合、[アクション%s]を使う。</string>
     <string name="Change_attack_pattern_to_d">行動パターンを%dに変化させる。</string>
     <string name="This_effect_will_be_released_when_taking_damaged">この効果はダメージを受けた時に解除される。</string>
+    <string name="s_highest_HP">HPが一番高い%s</string>
+    <string name="s_lowest_HP">HPが一番低い%s</string>
+    <string name="the_s_highest_HP">HPが%s高い</string>
+    <string name="the_s_lowest_HP">HPが%s低い</string>
+    <string name="the_highest_HP">HPが一番高い</string>
+    <string name="the_lowest_HP">HPが一番低い</string>
+    <string name="max_HP">最大HP</string>
+    <string name="Deal_damage_equal_to_s1_of_targets_original_max_HP_to_s2">%2$sに本来の最大HP [%1$s%%] 分のダメージを与える。</string>
+    <string name="Multiple_attack_speed_of_s1_with_s2_for_s3_sec">%1$sの行動速度を本来の [%2$s%%] にする、効果時間 [%3$s] 秒。</string>
+    <string name="barriers">バリア</string>
+    <string name="Multiple_heal_effects_from_s1_with_s2_for_s3_sec">%1$sの回復量は本来の [%2$s] 倍にする、効果時間 [%3$s] 秒。</string>
+    <string name="buff">バフ効果</string>
+    <string name="debuff">デバフ効果</string>
+    <string name="Passive_Whenever_s1_get_s2_seals_s3_with_d4_marks_id_d5_for_s6_sec_caps_at_d7_This_passive_skill_will_listen_for_s8_sec">パッシブ：%1$sが%2$sを受けるたび、%3$sにマーク[ID: %5$s]を [%4$s] 追加する、マークの継続時間 [%6$s] 秒、最大 [%7$s] までスタックする。このパッシブ効果は [%8$s] 秒継続する。</string>
+    <string name="add">+</string>
+    <string name="subtract">-</string>
+    <string name="Make_s1_damage_changes_into_s234_times_caps_to_s5_times_dur_s6_sec">パッシブ：%1$sが与えられるダメージを [1 %2$s %3$s * %1$sの%4$s数] 倍にする（最大%5$s倍）、効果時間 [%6$s] 秒。</string>
 </resources>
